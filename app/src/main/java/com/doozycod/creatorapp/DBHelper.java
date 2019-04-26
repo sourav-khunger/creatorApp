@@ -31,6 +31,13 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put("ids", ids);
         cv.put("numbers", number);
 
-//        db.insert(TABLE_NAME,)
+        db.insert(TABLE_NAME, null, cv);
+    }
+
+    public void update(String numbers,String ids) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("ids", ids);
+        db.update(TABLE_NAME, cv, "num=?", new String[]{ids});
     }
 }
