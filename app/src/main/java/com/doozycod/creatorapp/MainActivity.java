@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button addtextButton, addEditText, addRadioButton, addCheckbox, addButton;
-
+    int number = 4, num = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +63,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout layout = findViewById(R.id.edittextContainer);
         EditText editText = new EditText(this);
         editText.setHint("Text is here");
-        editText.setId(editText.generateViewId());
-        Log.e("editText",editText.generateViewId()+"");
-
-
+        editText.setId(number);
+        Log.e("editText", editText.getId() + "");
         editText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         layout.addView(editText);
     }
@@ -75,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout layout = findViewById(R.id.edittextContainer);
         TextView tv = new TextView(this);
         tv.setText("Text is here");
-        tv.setId(tv.generateViewId());
-        Log.e("TEXT",tv.generateViewId()+"");
+        tv.setId(num);
+        Log.e("TEXT", tv.getId()+"");
 
         tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         layout.addView(tv);
